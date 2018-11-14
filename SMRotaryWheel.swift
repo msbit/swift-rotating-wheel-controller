@@ -98,7 +98,7 @@ class SMRotaryWheel: UIControl {
         var upper = sectorAngle / 2.0
         
         for i in 0..<numberOfSections {
-            // Create and view to container
+            // Create and add view to container
             let view = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
             view.backgroundColor = .red
             view.text = "\(i)"
