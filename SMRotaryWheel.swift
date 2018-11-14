@@ -88,6 +88,14 @@ class SMRotaryWheel: UIControl {
         return (dx * dx + dy * dy).squareRoot()
     }
     
+    func createView(index: Int) -> UIView {
+        let view = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
+        view.backgroundColor = .red
+        view.tag = index
+        view.text = "\(index)"
+        return view
+    }
+
     func setup() {
         container = UIView(frame: frame)
         guard let container = container, let numberOfSections = numberOfSections else {
@@ -99,13 +107,10 @@ class SMRotaryWheel: UIControl {
         
         for i in 0..<numberOfSections {
             // Create and add view to container
-            let view = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
-            view.backgroundColor = .red
-            view.text = "\(i)"
+            let view = createView(index: i)
             view.layer.anchorPoint = CGPoint(x: 1.0, y: 0.5)
             view.layer.position = CGPoint(x: container.bounds.size.width / 2.0, y: container.bounds.size.height / 2.0)
             view.transform = CGAffineTransform(rotationAngle: CGFloat(i) * sectorAngle)
-            view.tag = i
             
             container.addSubview(view)
             
