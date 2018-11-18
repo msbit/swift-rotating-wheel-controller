@@ -9,6 +9,6 @@
 import UIKit
 
 protocol SMRotaryProtocol {
-    func wheelDidChangeValue(to: Int)
     func viewFor(tag: Int) -> UIView
+    func wheelDidChangeValue(to: Int)
 }
