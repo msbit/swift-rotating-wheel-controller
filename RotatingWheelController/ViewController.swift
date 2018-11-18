@@ -27,7 +27,7 @@ extension ViewController : SMRotaryProtocol {
     }
 
     func wheelDidChangeValue(to: Int) {
-        os_log(OSLogType.default, "%d", to);
+        print("\(to)")
     }
 }
 
